@@ -111,10 +111,14 @@ flowchart TD
 | L4 | Paper bot | per window | no | running | `paper_trades.jsonl` |
 | L5 | Maker probe | per window | **yes** | running | `maker_probe.jsonl` |
 | L6 | Build | on demand | no | gated | — |
-| G1 | Fill gate | weekly | **yes** | pending data | open/closed |
-| G2 | Calibration gate | weekly | **yes** | pending G1 | z-scores |
-| G3 | Feed gate | weekly | **yes** | pending G2 | basis-adjusted |
-| G4 | Maker gate | weekly | **yes** | pending L5 | fill vs adverse |
+| G1 | Fill gate | weekly | **yes** | **PASS** — 90% at T-120s | open |
+| G2 | Calibration gate | weekly | **yes** | **FAIL** — aggregate z=−0.07 | calibrated |
+| G3 | Feed gate | weekly | **yes** | never run — G2 closed it | — |
+| G4 | Maker gate | weekly | **yes** | **FAIL** — 93/94 adverse | negative |
+
+**Closed 2026-07-27.** Critical path terminated at G2; the parallel maker branch terminated
+at G4. Both red exit states in the graph above were reached. No loop below L5 should be
+restarted without a materially different hypothesis.
 
 Critical path: **L2 → G1 → G2 → G3 → L6**, with **L5 → G4 → L6** as the parallel and
 currently more promising branch.

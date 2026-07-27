@@ -685,6 +685,328 @@ G4: T-120 n=68 47% one-sided −0.0872/share; T-60 n=53 62% −0.0965/share; str
 
 G2 ETA Mon 16:37 — 72 rows out, ~6 h.
 
+---
+
+## 2026-07-27 11:56 — iteration 26 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **143/200 (72%)** (+15) · `maker_probe.jsonl` 136 (+15) ·
+`paper_trades.jsonl` 153 (+15) · stale nulls 0.
+
+G1: T-120 **132/142 = 93%** CI [88%, 96%]; T-90 **114/143 = 80%** CI [72%, 85%]; both clear.
+T-60 63%; T-45 54%; T-30 38%.
+
+G4: T-120 n=76 45% one-sided −0.0808/share; T-60 n=60 63% −0.0960/share; streak **72/72**.
+
+Project published to <https://github.com/houssem98/polymarket-btc-5m-research> (public) at
+128 ladder rows. The committed data is a snapshot; worth re-pushing after G2 runs.
+
+G2 ETA Mon 16:37 — 57 rows out.
+
+---
+
+## 2026-07-27 12:11 — iteration 27 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **146/200 (73%)** (+3) · `maker_probe.jsonl` 139 (+3) ·
+`paper_trades.jsonl` 156 (+3) · stale nulls 0.
+
+G1: T-120 **135/145 = 93%** CI [88%, 96%]; T-90 **115/146 = 79%** CI [71%, 85%]; both clear.
+T-60 62%; T-45 53%; T-30 38%.
+
+G4: T-120 n=77 44% one-sided −0.0795/share; T-60 n=62 63% −0.0931/share; streak **73/73**.
+
+G2 ETA Mon 16:37 — 54 rows out.
+
+---
+
+## 2026-07-27 12:41 — iteration 28 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **152/200 (76%)** (+6) · `maker_probe.jsonl` 145 (+6) ·
+`paper_trades.jsonl` 162 (+6) · stale nulls 0.
+
+G1: T-120 **139/151 = 92%** CI [87%, 95%]; T-90 **118/152 = 78%** CI [70%, 84%]; both clear,
+though T-90's lower bound has slipped to exactly 70% — it is the marginal one and could still
+fall back below the bar before n=200.
+
+G4: T-120 n=80 45% one-sided −0.0770/share; T-60 n=65 62% −0.0888/share; streak **76/76**.
+
+G2 ETA Mon 16:37 — 48 rows out, ~4 h.
+
+---
+
+## 2026-07-27 13:11 — iteration 29 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **158/200 (79%)** (+6) · `maker_probe.jsonl` 151 (+6) ·
+`paper_trades.jsonl` 168 (+6) · stale nulls 0.
+
+G1: T-120 **145/157 = 92%** CI [87%, 96%]; T-90 **123/158 = 78%** CI [71%, 84%] — recovered
+off the 70% edge it touched last iteration. Both clear. T-60 62%; T-45 53%; T-30 37%.
+
+G4: T-120 n=83 46% one-sided −0.0752/share; T-60 n=68 63% −0.0959/share; streak **81/81**.
+
+G2 ETA Mon 16:37 — 42 rows out, ~3.5 h.
+
+---
+
+## 2026-07-27 13:41 — iteration 30 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **164/200 (82%)** (+6) · `maker_probe.jsonl` 157 (+6) ·
+`paper_trades.jsonl` 174 (+6) · stale nulls 0.
+
+G1: T-120 **149/162 = 92%** CI [87%, 95%]; T-90 **127/164 = 77%** CI [70%, 83%] — back on the
+70% edge. Both nominally clear; T-90 remains the marginal one and should be treated as
+provisional until n=200. T-60 62%; T-45 53%; T-30 36%.
+
+G4: T-120 n=86 44% one-sided −0.0724/share; T-60 n=71 62% −0.0920/share; streak **82/82**.
+
+G2 ETA Mon 16:37 — 36 rows out, ~3 h.
+
+---
+
+## 2026-07-27 14:11 — iteration 31 · **T-90 falls back below the bar**
+
+3 processes ✅ · `ladder.jsonl` **170/200 (85%)** (+6) · `maker_probe.jsonl` 163 (+6) ·
+`paper_trades.jsonl` 180 (+6) · stale nulls 0.
+
+| offset | fillable | 95% CI | clears 70%? |
+|---|---|---|---|
+| T-120 | **152/168 = 90%** | [85%, 94%] | yes |
+| T-90 | 129/170 = 76% | **[69%, 82%]** | **no — fell back** |
+| T-60 | 103/170 = 61% | [53%, 68%] | no |
+| T-45 | 89/170 = 52% | [45%, 60%] | no |
+| T-30 | 61/170 = 36% | [29%, 43%] | no |
+
+T-90 cleared at iteration 22 (71% lower bound), oscillated across the bar for nine
+iterations, and has now settled below it. Iteration 22 called it "marginal — treat as
+provisional"; that caution was warranted and the provisional pass is withdrawn.
+
+**This simplifies G2 rather than complicating it.** One viable offset means **four buckets,
+not eight**, so the multiple-testing burden flagged at iteration 22 halves. T-120 is the
+single entry point the calibration test will run against.
+
+Note T-120 also eased, 92% → 90%, but its lower bound (85%) has 15 points of headroom over
+the bar. Not at risk.
+
+G4: T-120 n=89 45% one-sided −0.0769/share; T-60 n=74 61% −0.0965/share; streak **85/85**.
+
+G2 ETA Mon 16:37 — 30 rows out, ~2.5 h.
+
+---
+
+## 2026-07-27 14:41 — iteration 32 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **176/200 (88%)** (+6) · `maker_probe.jsonl` 169 (+6) ·
+`paper_trades.jsonl` 186 (+6) · stale nulls 0.
+
+G1: T-120 **158/174 = 91%** CI [86%, 94%] (clears, sole qualifying offset); T-90 77%
+CI [70%, 82%] — still under, consistent with iteration 31's withdrawal; T-60 61%; T-45 52%;
+T-30 36%.
+
+G4: T-120 n=92 45% one-sided −0.0751/share; T-60 n=77 62% −0.0984/share; streak **89/89**.
+
+G2 ETA Mon 16:37 — 24 rows out, ~2 h.
+
+---
+
+## 2026-07-27 15:11 — iteration 33 · checkpoint
+
+3 processes ✅ · `ladder.jsonl` **182/200 (91%)** (+6) · `maker_probe.jsonl` 175 (+6) ·
+`paper_trades.jsonl` 192 (+6) · stale nulls 0.
+
+G1: T-120 **161/180 = 89%** CI [84%, 93%] (clears, sole qualifying offset); T-90 75%
+CI [68%, 80%]; T-60 59%; T-45 51%; T-30 35%. Every offset has drifted down 1–2 points over
+the last three iterations — T-120 still has 14 points of headroom, so this is drift, not risk.
+
+G4: T-120 n=95 45% one-sided −0.0731/share; T-60 n=80 60% −0.0947/share; streak **91/91**.
+
+G2 ETA Mon 16:37 — 18 rows out, ~1.5 h. Next iteration or the one after runs the gate.
+
+---
+
+## 2026-07-27 15:15 — **`bot.py` traded, lost 28.8%, and tripped its circuit breaker**
+
+Missed in earlier iterations because every prior check only counted rows. `bot.py` is no
+longer inert: **3 paper trades, 3 losses, bankroll $200 → $142.47**, then `circuit_breaker`
+has blocked all 169 windows since.
+
+```
+UP   @ $0.01 x 2000.00 sh  p_win 0.78  ->  DOWN won  -$21.38
+UP   @ $0.01 x 1786.20 sh  p_win 0.52  ->  DOWN won  -$19.09
+DOWN @ $0.01 x 1595.26 sh  p_win 0.52  ->  UP   won  -$17.05
+```
+
+All three bought at **$0.01** — the price a market charges for a side it is ~99% certain
+will lose. The market was right all three times.
+
+**Not a token-ordering bug.** Verified against Gamma: `outcomes = ["Up","Down"]`,
+`clobTokenIds` in the same order, and the bot's `token_id` resolves to index 0 = "Up" on a
+trade where it recorded `side: UP`. It bought what it intended to buy.
+
+**The EV filter caused the loss rather than preventing it.** `EV = p_win − price − fee`
+= `0.78 − 0.01 − 0.0007` = **+0.769**, which reads as an enormous edge and is entirely an
+artifact of `p_win_ladder()` disagreeing with a correctly-priced market. Kelly then sized
+that fake edge into 2000 shares. On trade 3, `delta_pct = −5e-05` — essentially flat — yet
+the market priced that side at $0.01, so the model and the market were not merely
+disagreeing on magnitude but on the outcome itself. Most likely a bad `window_open_price`
+making the delta sign unreliable; not diagnosed further, because the strategy is already
+rejected.
+
+**This is a rejected loop confirmed live.** `LOOPS.md` lists "ladder-gated EV snipe" under
+rejected loops with the note *"the EV filter selects its own worst trades."* That was
+inferred from `scaffold_sim.py`. It has now happened with real prices and real outcomes.
+
+**Strategy scorecard, both tested strategies:**
+
+| strategy | windows | win rate | result |
+|---|---|---|---|
+| maker two-sided, T-120 | 97 | 47% | −$33.65 @ 5 sh |
+| maker two-sided, T-60 | 82 | 18% | −$38.66 @ 5 sh |
+| **maker combined** | **179** | **34.1%** | **−$72.31 (−$116/day run-rate)** |
+| **taker EV snipe (`bot.py`)** | **3 taken / 196** | **0%** | **−$57.53 (−28.8% bankroll)** |
+
+T-120's 47% win rate still loses money: wins are +1.5¢, losses −18¢. Win rate is the wrong
+metric for this payoff shape.
+
+**Zero of two strategies are profitable.** G2 remains the only open question.
+
+---
+
+## 2026-07-27 15:41 — iteration 34 · **the adverse-selection streak breaks at 93**
+
+3 processes ✅ · `ladder.jsonl` **188/200 (94%)** (+6) · `maker_probe.jsonl` 181 (+6) ·
+`paper_trades.jsonl` 198 (+6) · stale nulls 0. `bot.py` still circuit-broken at $142.47.
+
+G1: T-120 **166/186 = 89%** CI [84%, 93%] (clears, sole offset); T-90 74%; T-60 59%;
+T-45 51%; T-30 35%.
+
+G4: T-120 n=98 46% one-sided −0.0689/share; T-60 n=83 59% −0.0932/share; streak now
+**93/94** — the first exception after 93 consecutive:
+
+```
+btc-updown-5m-1785161400  quote T-120  winner DOWN
+  DOWN  quote 0.80  queue 609.94 -> 0.0  touched  fill T-48.7s  min_ask 0.77  pnl +0.202
+  UP    quote 0.20  queue 0.00           never filled
+```
+
+It filled on the **winner** and made +0.202. The setup is instructive: DOWN was already a
+heavy favourite at 0.80 when quoted, the market dipped to 0.77 — filling us — and then DOWN
+won anyway. So a one-sided fill in a *lopsided* window can land on the right side, because
+the dip that fills you is noise rather than information.
+
+The UP side is also a check on the fill logic working correctly: `queue_ahead = 0.0` meant
+the consumption test could never be satisfied, so it stayed unfilled rather than being
+counted on a technicality.
+
+**This does not rescue G4.** One +0.20 against 93 losses averaging −0.18; T-120's mean is
+still −0.0689/share. What it does correct is the *framing*: adverse selection is a ~99%
+tendency, not a law. Earlier entries called it "a claim about mechanism" — that stands, but
+"14/14, 65/65, 93/93" invited reading it as deterministic, and it is not.
+
+G2 ETA — **12 rows out, ~1 h.** Next iteration likely runs the gate.
+
+---
+
+## 2026-07-27 16:11 — iteration 35 · **G2 pre-registered; a look-ahead bug in my own G1 check**
+
+3 processes ✅ · `ladder.jsonl` **194/200 (97%)** (+6) · `maker_probe.jsonl` 187 (+6) ·
+`paper_trades.jsonl` 204 (+6). Six rows short — G2 not run.
+
+**Bug found in the G1 preview code (mine, not the collectors').** Every G1 number reported
+since iteration 1 computed *"did the **winner** have a fillable ask"*, but the criterion is
+*"did the **favourite** have a fillable ask"*. The winner is unknowable at T-120; using it is
+look-ahead. Recomputed both ways:
+
+| offset | winner-based (reported) | favourite-based (correct) | fav == winner |
+|---|---|---|---|
+| T-120 | 172/192 = 90% | **172/192 = 90%** CI [84%, 93%] | 83% |
+| T-90 | 145/194 = 75% | 145/194 = 75% | 86% |
+| T-60 | 114/194 = 59% | 114/194 = 59% | 88% |
+| T-45 | 97/194 = 50% | 96/194 = 49% | 95% |
+| T-30 | 67/194 = 35% | 67/194 = 35% | 98% |
+| T-10 | 0/194 = 0% | 0/194 = 0% | 100% |
+
+**The numbers are identical except one window at T-45.** Fillability is a property of the
+book, and in nearly every window both sides are quoted or neither is — so which side you
+name barely matters. The G1 conclusion stands unchanged, now verified rather than assumed.
+The bias was real and worth removing regardless; it just had no teeth here.
+
+**`gate_g2.py` written and pre-registered at 194 rows** — before the qualifying data exists,
+so no parameter can be tuned to the outcome. Fixed in advance: T-120 only (sole G1-clearing
+offset), favourite by price never by outcome, real ask VWAP at 5 shares, unbuyable windows
+excluded *and counted*, the four ROADMAP_V2 bands, fee `0.07·p·(1−p)`, PASS requires z > 2
+**and** positive PnL after fee. Four buckets are tested, so the file prints both the
+uncorrected z > 2.00 and the Bonferroni threshold z > 2.50.
+
+Next iteration crosses 200 and runs it.
+
+---
+
+## 2026-07-27 16:41 — iteration 36 · **G2 FAILS — the market is calibrated. Project finished.**
+
+`ladder.jsonl` reached **200**. Ran `gate_g2.py` unmodified from its pre-registration at
+194 rows.
+
+```
+resolved 200 | tradeable 189 | favourite unbuyable 9 | no T-120 sample 2
+
+        band    n     hit  implied    edge      z     fee   pnl/sh     ROI
+   0.00-0.88  108 67.59%  71.14%  -3.55%  -0.81  0.0134  -0.0489  -6.87%
+   0.88-0.94   22 100.00% 91.34%  +8.66%  +1.44  0.0055  +0.0811  +8.87%
+   0.94-0.99   59 100.00% 97.40%  +2.60%  +1.25  0.0018  +0.0242  +2.49%
+   0.99-1.00    0
+```
+
+**No band reaches z > 2. G2 FAILS.**
+
+**The decisive number is the aggregate.** Across all 189 tradeable windows the favourite
+won **81.48%** against an implied **81.69%** — **z = −0.07**. That is not "close to
+calibrated", it is calibrated to within a fifth of a percentage point. There is no edge to
+find because the price is already right. Trading every window at 5 shares returns
+**−$10.32 over 189 windows (−$0.055/window)**, and the loss is almost exactly the fee.
+
+**The band where the volume is, loses.** `≤0.88` holds 108 of 189 windows and comes in at
+67.59% against 71.14% implied — negative edge, negative ROI, z = −0.81.
+
+### The tempting result, tested and rejected
+
+The two upper bands both hit **100%**. Merged, that is **81/81 wins**, implied 95.76%,
+ROI +4.14% — and **z = +1.89**, short of the pre-registered bar of 2.00 and well short of
+the Bonferroni threshold of 2.50. That merge is also **post-hoc**: it is a fifth bucket
+invented after seeing the four, so the correct correction is harsher, not gentler.
+P(81/81 | independent at 95.76%) = **0.030**, which is mildly surprising and nowhere near
+enough given how many slices this dataset has been through today.
+
+Worth stating plainly because it will keep looking attractive: the same region scored
++1.80% ROI at z = +0.71 over 700 historical windows. Two underpowered samples, both mildly
+positive, neither significant, and the effect is exactly what fee curvature predicts —
+`0.07·p·(1−p)` collapses as p → 1, so the least-bad band is mechanically the one nearest
+certainty. That is not an edge; it is paying less to be right about something obvious.
+
+### Final state of every gate
+
+| gate | verdict | evidence |
+|---|---|---|
+| **G1** fill | **PASS** | favourite fillable at 5 sh under $0.99 in 90% of windows at T-120s, CI [84%, 93%] |
+| **G2** calibration | **FAIL** | aggregate z = −0.07; no band z > 2; dominant band −6.87% ROI |
+| **G3** feed | **not run** | gated on G2; a Chainlink swap cannot create an edge that does not exist |
+| **G4** maker | **FAIL** | 93/94 one-sided fills on the losing side; −$0.069/share at T-120, −$0.093 at T-60 |
+
+Plus, unplanned: `bot.py` traded 3 times, lost all 3, and gave up 28.8% of bankroll to an
+EV filter that manufactured a fake +0.769 edge from a model that disagreed with a correct
+market.
+
+### Recommendation: stop
+
+Per LOOP_PROMPT's own rule — every gate has failed and the maker probe is negative — **this
+project is finished and should be stopped.** No new strategy should be invented to keep it
+alive. The market is efficient at the only moment you can trade it, the fee is larger than
+the spread, and the one structurally favourable side (maker) is destroyed by adverse
+selection.
+
+**This is the valuable outcome.** It cost 17 hours of measurement and $0 of capital to
+establish what a funded account would have discovered slowly and expensively. The taker path
+was closed by arithmetic, the maker path by evidence, and both are now documented well enough
+that nobody has to re-run them.
+
 **Note on cadence:** `ladder.py` sweeps settlements only after the next window's
 blocking sample loop, so a row lands ~10 min after its window closes, not ~6.
 Not a bug — factor it into growth expectations.

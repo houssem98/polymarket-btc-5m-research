@@ -1,5 +1,17 @@
 # ROADMAP_V2 — Gap Analysis Adjudicated Against Measured Data
 
+> ## FINAL — 2026-07-27 16:41. Project closed.
+>
+> **G1 PASS** (favourite fillable at 5 shares under $0.99 in 90% of windows at T-120s).
+> **G2 FAIL** — across 189 tradeable windows the favourite won 81.48% against 81.69%
+> implied, **z = −0.07**. The market is calibrated; no band reaches z > 2; the band holding
+> most of the volume (≤0.88) returns −6.87% ROI.
+> **G4 FAIL** — 93 of 94 one-sided maker fills landed on the losing side; −$0.069/share at
+> T-120, −$0.093 at T-60.
+> **G3** never ran: swapping to the Chainlink feed cannot create an edge that does not exist.
+>
+> There is no tradeable strategy here. See [FINDINGS.md](FINDINGS.md) for the full record.
+
 Response to `gemini-code-1785106089430.md` (COMPARISON.md). Every claim in that
 document was checked against live APIs and 700 real windows before being accepted
 or rejected. See [ROADMAP.md](ROADMAP.md) for the base measurements.

@@ -64,17 +64,58 @@ The streak is not a trend artifact.
 At p = 0.50 the taker fee is $0.0175/share against a $0.01 spread — **1.75× the entire
 margin being traded for.** None of the five reference bots model it.
 
-### Open question
+### 4. The price is not beatable — and this closes the project
 
-Whether the price is *beatable* — does the favourite win more often than its price implies?
-That is a calibration test, and it is the only thing that determines profitability.
-Fillability is not edge: a favourite is cheap at T-120s precisely because the outcome is
-still open. An earlier run over 700 windows found no band with z > 2.
+Being able to buy is not an edge. The only test that matters is whether the favourite wins
+*more often than its price implies*. Over 189 tradeable windows at T-120s, using real ask
+VWAPs:
+
+| band | n | hit | implied | edge | z | PnL/share | ROI |
+|---|---|---|---|---|---|---|---|
+| ≤0.88 | 108 | 67.59% | 71.14% | −3.55% | −0.81 | −0.0489 | −6.87% |
+| 0.88–0.94 | 22 | 100.00% | 91.34% | +8.66% | +1.44 | +0.0811 | +8.87% |
+| 0.94–0.99 | 59 | 100.00% | 97.40% | +2.60% | +1.25 | +0.0242 | +2.49% |
+
+**Aggregate: the favourite won 81.48% against 81.69% implied — z = −0.07.** Calibrated to
+within a fifth of a percentage point. Trading every window returns −$0.055/window, which is
+almost exactly the fee. The band holding most of the volume is outright negative.
+
+The two upper bands both hit 100%, and merging them gives 81/81 wins at +4.14% ROI — but
+z = +1.89, under the pre-registered threshold of 2.00 and well under the Bonferroni
+threshold of 2.50 for four buckets. That merge is also post-hoc. The reason it looks good is
+mechanical: the fee `0.07·p·(1−p)` collapses as p → 1, so the band nearest certainty is
+necessarily the least-bad one. Paying less to be right about something obvious is not an
+edge.
+
+The gate criteria were **pre-registered in `gate_g2.py` at 194/200 rows**, before the
+qualifying data existed, so no parameter could be tuned to the outcome.
+
+## Verdict
+
+| gate | verdict | evidence |
+|---|---|---|
+| **G1** — can you buy? | **PASS** | 90% of windows at T-120s, CI [84%, 93%] |
+| **G2** — is the price beatable? | **FAIL** | aggregate z = −0.07; no band z > 2 |
+| **G3** — does the edge survive the right feed? | never run | cannot create an edge that does not exist |
+| **G4** — does market making work? | **FAIL** | 93/94 one-sided fills on the losing side |
+
+**There is no tradeable strategy in these markets.** The market is efficient at the only
+moment you can trade it, the fee exceeds the spread, and the one structurally favourable
+side is destroyed by adverse selection.
+
+A fourth result arrived unplanned: `bot.py`, the paper taker, eventually did trade — 3
+times, losing all 3 and 28.8% of its bankroll, before its circuit breaker halted it. It
+bought at $0.01 a side the market priced as ~99% certain to lose, because its EV filter
+computed `0.78 − 0.01 − 0.0007 = +0.769` from a model that disagreed with a correct market.
+The filter did not fail to catch bad trades; it manufactured them.
+
+This cost 17 hours of measurement and zero capital.
 
 ## Files
 
 | File | Role |
 |---|---|
+| `gate_g2.py` | The calibration gate, pre-registered at 194/200 rows |
 | `ladder.py` | Samples both books at 7 offsets per window → `ladder.jsonl` |
 | `maker_probe.py` | Read-only maker simulation, alternating T-120/T-60 → `maker_probe.jsonl` |
 | `bot.py` | Paper taker bot, momentum + Kelly + EV filter → `paper_trades.jsonl` |
@@ -113,5 +154,11 @@ python maker_probe.py  # maker-side probe
 python bot.py          # paper trader
 ```
 
-All three are read-only against public APIs and append JSONL. They run indefinitely; the
-data files here are a snapshot.
+All three are read-only against public APIs and append JSONL.
+
+```bash
+python gate_g2.py      # the calibration gate, run against ladder.jsonl
+```
+
+The collectors were stopped on 2026-07-27 at 203 / 196 / 213 rows once every gate had
+resolved. The data here is the complete record, not a snapshot.
