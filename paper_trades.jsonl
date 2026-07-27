@@ -1,0 +1,153 @@
+{"window_ts": 1785103800, "slug": "btc-updown-5m-1785103800", "ts": 1785104090, "delta_pct": 0.06799, "side": "UP", "p_win": 0.78, "open_px": 65189.67, "spot_px": 65233.99, "token_id": "39514163443815524236909654299514874103588423825970131448843121340280459605949", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785104100, "slug": "btc-updown-5m-1785104100", "ts": 1785104390, "delta_pct": -0.00064, "side": "DOWN", "p_win": 0.52, "open_px": 65206.96, "spot_px": 65206.54, "token_id": "14162730056755201021968418862804719540351358617392080498273035353080269282520", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785104400, "slug": "btc-updown-5m-1785104400", "ts": 1785104690, "delta_pct": 0.03082, "side": "UP", "p_win": 0.65, "open_px": 65193.91, "spot_px": 65214.0, "token_id": "96892909915477117659602064448636579083994573863983664644744170121938933311996", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785104700, "slug": "btc-updown-5m-1785104700", "ts": 1785104990, "delta_pct": 0.04284, "side": "UP", "p_win": 0.65, "open_px": 65214.0, "spot_px": 65241.94, "token_id": "104797377323298280725633536291322566677076587809084349372432780364203632729311", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785105000, "slug": "btc-updown-5m-1785105000", "ts": 1785105290, "delta_pct": 0.32791, "side": "UP", "p_win": 0.9, "open_px": 65204.0, "spot_px": 65417.81, "token_id": "113549663129539834613300873925314179439177609510870464582343245107327543584929", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785105300, "slug": "btc-updown-5m-1785105300", "ts": 1785105590, "delta_pct": 0.09315, "side": "UP", "p_win": 0.78, "open_px": 65389.95, "spot_px": 65450.86, "token_id": "43305074784509603084781711035582907612509729323161003039206135793207704273242", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785105600, "slug": "btc-updown-5m-1785105600", "ts": 1785105890, "delta_pct": 0.03514, "side": "UP", "p_win": 0.65, "open_px": 65417.01, "spot_px": 65440.0, "token_id": "5064314708706400610567000006704177045319486252646729022069343046241191309900", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785105900, "slug": "btc-updown-5m-1785105900", "ts": 1785106190, "delta_pct": 0.03038, "side": "UP", "p_win": 0.65, "open_px": 65467.67, "spot_px": 65487.56, "token_id": "34473787848994433162042898005236527180673785512075832800501587966368854556523", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785106200, "slug": "btc-updown-5m-1785106200", "ts": 1785106490, "delta_pct": -0.08635, "side": "DOWN", "p_win": 0.78, "open_px": 65477.0, "spot_px": 65420.46, "token_id": "42100871113841403634233646689561597398813613691330669029885694492974210063825", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785106800, "slug": "btc-updown-5m-1785106800", "ts": 1785107090, "delta_pct": 0.05704, "side": "UP", "p_win": 0.78, "open_px": 65412.69, "spot_px": 65450.0, "token_id": "41109303142805187655385759520068787580128840209737810849019413259396822938344", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785107100, "slug": "btc-updown-5m-1785107100", "ts": 1785107390, "delta_pct": 0.16415, "side": "UP", "p_win": 0.9, "open_px": 65420.01, "spot_px": 65527.4, "token_id": "71520206256085412973317331539352408349662230742020532155598908337601640174195", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785106500, "slug": "btc-updown-5m-1785106500", "ts": 1785106790, "delta_pct": 0.06418, "side": "UP", "p_win": 0.78, "open_px": 65426.0, "spot_px": 65467.99, "token_id": "214152533058900959402364747141902386706479995480808333461929910756941919786", "ask_vwap": 0.01, "limit_price": 0.01, "fee_per_share": 0.00069, "ev_per_share": 0.76931, "action": "paper_buy", "shares": 2000.0, "cost": 20.0, "order": {"token_id": "214152533058900959402364747141902386706479995480808333461929910756941919786", "price": 0.01, "size": 2000.0, "side": "BUY", "type": "FAK"}, "winner": "DOWN", "won": false, "pnl": -21.38, "bankroll": 178.62}
+{"window_ts": 1785107400, "slug": "btc-updown-5m-1785107400", "ts": 1785107690, "delta_pct": -0.18731, "side": "DOWN", "p_win": 0.9, "open_px": 65534.23, "spot_px": 65411.48, "token_id": "101683143275959852199517854854197410073075932245133279333258749931406002508230", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785107700, "slug": "btc-updown-5m-1785107700", "ts": 1785107990, "delta_pct": -0.05583, "side": "DOWN", "p_win": 0.78, "open_px": 65408.52, "spot_px": 65372.0, "token_id": "35338605647149042548684797666391171157725308363142621991580615844153647057315", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785108300, "slug": "btc-updown-5m-1785108300", "ts": 1785108590, "delta_pct": -0.04352, "side": "DOWN", "p_win": 0.65, "open_px": 65353.56, "spot_px": 65325.12, "token_id": "39971668925543858116353100292476828371648133795385797684433558394579861736069", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785108600, "slug": "btc-updown-5m-1785108600", "ts": 1785108890, "delta_pct": 0.07081, "side": "UP", "p_win": 0.78, "open_px": 65334.0, "spot_px": 65380.26, "token_id": "102222698981818330287996687365656509099181711338879770144592810532603888052637", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785108000, "slug": "btc-updown-5m-1785108000", "ts": 1785108290, "delta_pct": 0.00854, "side": "UP", "p_win": 0.52, "open_px": 65360.42, "spot_px": 65366.0, "token_id": "76481556411587704289741385889782598787738383205457367534930381340688401773602", "ask_vwap": 0.01, "limit_price": 0.01, "fee_per_share": 0.00069, "ev_per_share": 0.50931, "action": "paper_buy", "shares": 1786.2, "cost": 17.862, "order": {"token_id": "76481556411587704289741385889782598787738383205457367534930381340688401773602", "price": 0.01, "size": 1786.2, "side": "BUY", "type": "FAK"}, "winner": "DOWN", "won": false, "pnl": -19.0945, "bankroll": 159.53}
+{"window_ts": 1785108900, "slug": "btc-updown-5m-1785108900", "ts": 1785109190, "delta_pct": -0.06094, "side": "DOWN", "p_win": 0.78, "open_px": 65374.6, "spot_px": 65334.76, "token_id": "38401940712767348562673908268299467371390635364873331268028736444268372107511", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785109200, "slug": "btc-updown-5m-1785109200", "ts": 1785109490, "delta_pct": 0.10461, "side": "UP", "p_win": 0.9, "open_px": 65338.01, "spot_px": 65406.36, "token_id": "26327092697112213983942526074545335691161185502704965888412802266605038919096", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785109500, "slug": "btc-updown-5m-1785109500", "ts": 1785109790, "delta_pct": -0.01203, "side": "DOWN", "p_win": 0.52, "open_px": 65407.2, "spot_px": 65399.33, "token_id": "37367494412287537575050728902717826531148056389066518885407362762024592703488", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785109800, "slug": "btc-updown-5m-1785109800", "ts": 1785110090, "delta_pct": 0.02835, "side": "UP", "p_win": 0.65, "open_px": 65399.34, "spot_px": 65417.88, "token_id": "90705109530353553647341917954057189682694221369966820977029981047264884997275", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785110100, "slug": "btc-updown-5m-1785110100", "ts": 1785110390, "delta_pct": -0.00057, "side": "DOWN", "p_win": 0.52, "open_px": 65417.89, "spot_px": 65417.52, "token_id": "25061062827405339725147154175018732800463350054636900915080052304713876219909", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785110400, "slug": "btc-updown-5m-1785110400", "ts": 1785110690, "delta_pct": -0.17431, "side": "DOWN", "p_win": 0.9, "open_px": 65400.0, "spot_px": 65286.0, "token_id": "34213971068917285241941695424321829264926770390567730727634503234272917011694", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785110700, "slug": "btc-updown-5m-1785110700", "ts": 1785110990, "delta_pct": -0.11823, "side": "DOWN", "p_win": 0.9, "open_px": 65286.01, "spot_px": 65208.82, "token_id": "33367965988106608907223493062180245197762568980129105349724879023344331461792", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785111300, "slug": "btc-updown-5m-1785111300", "ts": 1785111590, "delta_pct": -0.14252, "side": "DOWN", "p_win": 0.9, "open_px": 65227.33, "spot_px": 65134.37, "token_id": "90011222877703820267744015808440368440762124238999035325801251475224401333192", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785111600, "slug": "btc-updown-5m-1785111600", "ts": 1785111890, "delta_pct": 0.04912, "side": "UP", "p_win": 0.65, "open_px": 65141.99, "spot_px": 65173.99, "token_id": "114868386124837975500460602715345182911489813973037169414444448012923253829106", "action": "skip", "reason": "insufficient_ask_depth", "shares_wanted": 5.0}
+{"window_ts": 1785111000, "slug": "btc-updown-5m-1785111000", "ts": 1785111290, "delta_pct": -5e-05, "side": "DOWN", "p_win": 0.52, "open_px": 65215.99, "spot_px": 65215.96, "token_id": "1737319634482352758847661285277906044229841857288752791786551401792109704429", "ask_vwap": 0.01, "limit_price": 0.01, "fee_per_share": 0.00069, "ev_per_share": 0.50931, "action": "paper_buy", "shares": 1595.26, "cost": 15.9526, "order": {"token_id": "1737319634482352758847661285277906044229841857288752791786551401792109704429", "price": 0.01, "size": 1595.26, "side": "BUY", "type": "FAK"}, "winner": "UP", "won": false, "pnl": -17.0533, "bankroll": 142.47}
+{"window_ts": 1785111900, "slug": "btc-updown-5m-1785111900", "ts": 1785112190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785112200, "slug": "btc-updown-5m-1785112200", "ts": 1785112490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785112500, "slug": "btc-updown-5m-1785112500", "ts": 1785112790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785112800, "slug": "btc-updown-5m-1785112800", "ts": 1785113090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785113100, "slug": "btc-updown-5m-1785113100", "ts": 1785113390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785113400, "slug": "btc-updown-5m-1785113400", "ts": 1785113690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785113700, "slug": "btc-updown-5m-1785113700", "ts": 1785113990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785114000, "slug": "btc-updown-5m-1785114000", "ts": 1785114290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785114300, "slug": "btc-updown-5m-1785114300", "ts": 1785114590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785114600, "slug": "btc-updown-5m-1785114600", "ts": 1785114890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785114900, "slug": "btc-updown-5m-1785114900", "ts": 1785115190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785115200, "slug": "btc-updown-5m-1785115200", "ts": 1785115490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785115500, "slug": "btc-updown-5m-1785115500", "ts": 1785115790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785115800, "slug": "btc-updown-5m-1785115800", "ts": 1785116090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785116100, "slug": "btc-updown-5m-1785116100", "ts": 1785116390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785116400, "slug": "btc-updown-5m-1785116400", "ts": 1785116690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785116700, "slug": "btc-updown-5m-1785116700", "ts": 1785116990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785117000, "slug": "btc-updown-5m-1785117000", "ts": 1785117290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785117300, "slug": "btc-updown-5m-1785117300", "ts": 1785117590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785117600, "slug": "btc-updown-5m-1785117600", "ts": 1785117890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785117900, "slug": "btc-updown-5m-1785117900", "ts": 1785118190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785118200, "slug": "btc-updown-5m-1785118200", "ts": 1785118490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785118500, "slug": "btc-updown-5m-1785118500", "ts": 1785118790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785118800, "slug": "btc-updown-5m-1785118800", "ts": 1785119090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785119100, "slug": "btc-updown-5m-1785119100", "ts": 1785119390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785119400, "slug": "btc-updown-5m-1785119400", "ts": 1785119690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785119700, "slug": "btc-updown-5m-1785119700", "ts": 1785119990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785120000, "slug": "btc-updown-5m-1785120000", "ts": 1785120290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785120300, "slug": "btc-updown-5m-1785120300", "ts": 1785120590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785120600, "slug": "btc-updown-5m-1785120600", "ts": 1785120890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785120900, "slug": "btc-updown-5m-1785120900", "ts": 1785121190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785121200, "slug": "btc-updown-5m-1785121200", "ts": 1785121490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785121500, "slug": "btc-updown-5m-1785121500", "ts": 1785121790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785121800, "slug": "btc-updown-5m-1785121800", "ts": 1785122090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785122100, "slug": "btc-updown-5m-1785122100", "ts": 1785122390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785122400, "slug": "btc-updown-5m-1785122400", "ts": 1785122690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785122700, "slug": "btc-updown-5m-1785122700", "ts": 1785122990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785123000, "slug": "btc-updown-5m-1785123000", "ts": 1785123290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785123300, "slug": "btc-updown-5m-1785123300", "ts": 1785123590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785123600, "slug": "btc-updown-5m-1785123600", "ts": 1785123890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785123900, "slug": "btc-updown-5m-1785123900", "ts": 1785124190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785124200, "slug": "btc-updown-5m-1785124200", "ts": 1785124490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785124500, "slug": "btc-updown-5m-1785124500", "ts": 1785124790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785124800, "slug": "btc-updown-5m-1785124800", "ts": 1785125090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785125100, "slug": "btc-updown-5m-1785125100", "ts": 1785125390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785125400, "slug": "btc-updown-5m-1785125400", "ts": 1785125690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785125700, "slug": "btc-updown-5m-1785125700", "ts": 1785125990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785126000, "slug": "btc-updown-5m-1785126000", "ts": 1785126290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785126300, "slug": "btc-updown-5m-1785126300", "ts": 1785126590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785126600, "slug": "btc-updown-5m-1785126600", "ts": 1785126890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785126900, "slug": "btc-updown-5m-1785126900", "ts": 1785127190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785127200, "slug": "btc-updown-5m-1785127200", "ts": 1785127490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785127500, "slug": "btc-updown-5m-1785127500", "ts": 1785127790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785127800, "slug": "btc-updown-5m-1785127800", "ts": 1785128090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785128100, "slug": "btc-updown-5m-1785128100", "ts": 1785128390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785128400, "slug": "btc-updown-5m-1785128400", "ts": 1785128690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785128700, "slug": "btc-updown-5m-1785128700", "ts": 1785128990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785129000, "slug": "btc-updown-5m-1785129000", "ts": 1785129290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785129300, "slug": "btc-updown-5m-1785129300", "ts": 1785129590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785129600, "slug": "btc-updown-5m-1785129600", "ts": 1785129890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785129900, "slug": "btc-updown-5m-1785129900", "ts": 1785130190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785130200, "slug": "btc-updown-5m-1785130200", "ts": 1785130490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785130500, "slug": "btc-updown-5m-1785130500", "ts": 1785130790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785130800, "slug": "btc-updown-5m-1785130800", "ts": 1785131090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785131100, "slug": "btc-updown-5m-1785131100", "ts": 1785131390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785131400, "slug": "btc-updown-5m-1785131400", "ts": 1785131690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785131700, "slug": "btc-updown-5m-1785131700", "ts": 1785131990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785132000, "slug": "btc-updown-5m-1785132000", "ts": 1785132290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785132300, "slug": "btc-updown-5m-1785132300", "ts": 1785132590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785132600, "slug": "btc-updown-5m-1785132600", "ts": 1785132890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785132900, "slug": "btc-updown-5m-1785132900", "ts": 1785133190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785133200, "slug": "btc-updown-5m-1785133200", "ts": 1785133490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785133500, "slug": "btc-updown-5m-1785133500", "ts": 1785133790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785133800, "slug": "btc-updown-5m-1785133800", "ts": 1785134090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785134100, "slug": "btc-updown-5m-1785134100", "ts": 1785134390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785134400, "slug": "btc-updown-5m-1785134400", "ts": 1785134690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785134700, "slug": "btc-updown-5m-1785134700", "ts": 1785134990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785135000, "slug": "btc-updown-5m-1785135000", "ts": 1785135290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785135300, "slug": "btc-updown-5m-1785135300", "ts": 1785135590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785135600, "slug": "btc-updown-5m-1785135600", "ts": 1785135890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785135900, "slug": "btc-updown-5m-1785135900", "ts": 1785136190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785136200, "slug": "btc-updown-5m-1785136200", "ts": 1785136490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785136500, "slug": "btc-updown-5m-1785136500", "ts": 1785136790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785136800, "slug": "btc-updown-5m-1785136800", "ts": 1785137090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785137100, "slug": "btc-updown-5m-1785137100", "ts": 1785137390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785137400, "slug": "btc-updown-5m-1785137400", "ts": 1785137690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785137700, "slug": "btc-updown-5m-1785137700", "ts": 1785137990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785138000, "slug": "btc-updown-5m-1785138000", "ts": 1785138290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785138300, "slug": "btc-updown-5m-1785138300", "ts": 1785138590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785138600, "slug": "btc-updown-5m-1785138600", "ts": 1785138890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785138900, "slug": "btc-updown-5m-1785138900", "ts": 1785139190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785139200, "slug": "btc-updown-5m-1785139200", "ts": 1785139490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785139500, "slug": "btc-updown-5m-1785139500", "ts": 1785139790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785139800, "slug": "btc-updown-5m-1785139800", "ts": 1785140090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785140100, "slug": "btc-updown-5m-1785140100", "ts": 1785140390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785140400, "slug": "btc-updown-5m-1785140400", "ts": 1785140690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785140700, "slug": "btc-updown-5m-1785140700", "ts": 1785140990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785141000, "slug": "btc-updown-5m-1785141000", "ts": 1785141290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785141300, "slug": "btc-updown-5m-1785141300", "ts": 1785141590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785141600, "slug": "btc-updown-5m-1785141600", "ts": 1785141890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785141900, "slug": "btc-updown-5m-1785141900", "ts": 1785142190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785142200, "slug": "btc-updown-5m-1785142200", "ts": 1785142490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785142500, "slug": "btc-updown-5m-1785142500", "ts": 1785142790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785142800, "slug": "btc-updown-5m-1785142800", "ts": 1785143090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785143100, "slug": "btc-updown-5m-1785143100", "ts": 1785143390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785143400, "slug": "btc-updown-5m-1785143400", "ts": 1785143690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785143700, "slug": "btc-updown-5m-1785143700", "ts": 1785143990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785144000, "slug": "btc-updown-5m-1785144000", "ts": 1785144290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785144300, "slug": "btc-updown-5m-1785144300", "ts": 1785144590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785144600, "slug": "btc-updown-5m-1785144600", "ts": 1785144890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785144900, "slug": "btc-updown-5m-1785144900", "ts": 1785145190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785145200, "slug": "btc-updown-5m-1785145200", "ts": 1785145490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785145500, "slug": "btc-updown-5m-1785145500", "ts": 1785145790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785145800, "slug": "btc-updown-5m-1785145800", "ts": 1785146090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785146100, "slug": "btc-updown-5m-1785146100", "ts": 1785146390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785146400, "slug": "btc-updown-5m-1785146400", "ts": 1785146690, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785146700, "slug": "btc-updown-5m-1785146700", "ts": 1785146990, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785147000, "slug": "btc-updown-5m-1785147000", "ts": 1785147290, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785147300, "slug": "btc-updown-5m-1785147300", "ts": 1785147590, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785147600, "slug": "btc-updown-5m-1785147600", "ts": 1785147890, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785147900, "slug": "btc-updown-5m-1785147900", "ts": 1785148190, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785148200, "slug": "btc-updown-5m-1785148200", "ts": 1785148490, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785148500, "slug": "btc-updown-5m-1785148500", "ts": 1785148790, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785148800, "slug": "btc-updown-5m-1785148800", "ts": 1785149090, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785149100, "slug": "btc-updown-5m-1785149100", "ts": 1785149390, "action": "skip", "reason": "circuit_breaker"}
+{"window_ts": 1785149400, "slug": "btc-updown-5m-1785149400", "ts": 1785149690, "action": "skip", "reason": "circuit_breaker"}
