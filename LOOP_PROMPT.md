@@ -1,115 +1,126 @@
-# LOOP_PROMPT.md — Recurring Driver
+# LOOP_PROMPT.md — Measurement-Loop Driver
 
-Run with the `/loop` skill. Suggested cadence: **30 minutes**.
+The polymarket gates are closed (see [FINDINGS.md](FINDINGS.md)). What survives is the
+loop design, corrected. This is the reusable driver.
 
-```
-/loop 30m Execute one iteration of LOOP_PROMPT.md in the polymarket project.
-```
+**What changed and why.** The original ran 36 iterations, 11 of them consecutive
+no-change ticks, with no budget, no stall rule, no escalation trigger, and a 30-minute
+foreground cadence over a 17-hour data collection. Four parts were missing. They are
+added below, marked **[+]**. The two things the original did better than most —
+pre-registration and multiple-comparison correction — are kept and made explicit.
 
-Omit the interval to let the model self-pace. Everything below is read-only —
-no iteration of this loop may place an order.
+---
+
+## The nine parts
+
+Adapted from the loop anatomy in *Product Faculty, "How I Build Loops"*. Six were already
+here; four were not.
+
+| # | Part | Status |
+|---|---|---|
+| 1 | **Goal** — a finish line you can measure | had it (gate criteria) |
+| 2 | **Context** — what the loop knows going in | had it (ROADMAP, FINDINGS) |
+| 3 | **Actions** — the moves it may make each round | had it |
+| 4 | **Tools** — what it may touch | had it |
+| 5 | **Evals** — what judges each round | had it, plus pre-registration |
+| 6 | **Memory** — what carries between rounds | had it (FINDINGS.md, append-only) |
+| 7 | **Guardrails** — lines it cannot cross | had it, with a grep-verified check |
+| 8 | **Escalation** — when to stop and ask a human | **[+] missing** |
+| 9 | **Stop** — target, budget, stall | had target only; **[+] budget, stall** |
 
 ---
 
 ## The prompt
 
-Copy the block below as the loop body.
-
 ```
-Working dir: c:\Users\unicentrale\Downloads\trading polymarket and equitie , crypto
+Working dir: <project root>
 
-You are advancing the Polymarket BTC 5m research project. Read ROADMAP_V2.md and
-LOOPS.md for state. Do ONE iteration:
+You are advancing <project>. Read <roadmap> and <findings> for state. Do ONE iteration.
 
 STEP 1 — HEALTH
-  Check ladder.py and bot.py are each running exactly once:
-    Get-CimInstance Win32_Process -Filter "Name='python.exe'"
-  If either is missing, restart it in the background with the explicit interpreter
-  C:\Users\unicentrale\AppData\Local\Programs\Python\Python312\python.exe
-  (the venv shim double-spawns; always use the explicit path).
-  If either is running twice, kill the duplicate — both write the same file.
+  Verify each long-running collector is running exactly once. Restart what is missing
+  with the explicit interpreter path. Kill duplicates — two writers corrupt one file.
 
 STEP 2 — DATA
-  Count resolved rows:  ladder.jsonl, paper_trades.jsonl
-  Report the counts and the growth since the previous iteration.
-  If a row has "winner": null and is older than 30 minutes, investigate: settlement
-  is ~4.6 min, so nulls mean a real failure, not lag.
+  Count rows in each output. Report counts and growth since the previous iteration.
+  Investigate any unresolved row older than the known settlement time.
 
-STEP 3 — GATES (only when the data threshold is met; otherwise say how many more
-              windows are needed and stop)
+STEP 3 — GATES
+  Run a gate ONLY when its sample threshold is met. Otherwise say how many more
+  samples are needed and stop. Do not preview a gate's verdict from partial data;
+  reporting the trend is fine, calling it is not.
 
-  G1 FILL GATE — needs 200+ resolved rows in ladder.jsonl
-    For each offset (120/90/60/45/30/20/10s), compute across windows:
-      - % of windows where the FAVOURITE has a fillable ask at 5 / 20 / 50 shares
-      - median ask VWAP at each clip size
-      - median total ask depth
-    Print as a table: offset x clip size.
-    PASS if some offset fills 5 favourite shares under 0.99 in >70% of windows.
-    FAIL => write the result to ROADMAP_V2.md, declare the taker path closed,
-            and skip to STEP 4.
+STEP 4 — REPORT
+  Append a dated entry to <findings>: row counts, any gate run and its verdict, and
+  what the next iteration should do. A short table plus three lines. If the entry is
+  longer than that, the iteration probably had no content — say "no change" instead.
 
-  G2 CALIBRATION GATE — only if G1 passed
-    Re-run the band analysis using REAL ask VWAPs from ladder.jsonl instead of
-    mid+0.005. Bands: <=0.88, 0.88-0.94, 0.94-0.99, >0.99, at the best offset from G1.
-    Subtract fee = 0.07 * p * (1-p) per share.
-    Report n, hit, implied, edge, z, ROI per band.
-    PASS only if a band has z > 2 AND positive ROI net of fee.
-    Treat multiple-bucket testing honestly: mention how many buckets were tried.
-    FAIL => market is calibrated. Say so plainly and skip to STEP 4.
+STOP CONDITIONS — all three are checked every iteration
+  TARGET   the gate threshold is met and the gate has been run, or
+  BUDGET   <N> iterations OR <$X> spend, whichever comes first, or
+  STALL    3 consecutive iterations with no change in any gate's verdict AND no new
+           failure mode found. On stall: do not simply continue. Either widen the
+           cadence to the data's actual rate, or stop and schedule a single run at
+           the projected threshold time.
 
-  G3 FEED GATE — only if G2 passed
-    Re-test the surviving band restricted to windows where |delta| > 2bps, since
-    100% of measured Binance/Chainlink disagreements were under 2bps.
-    PASS if the edge survives. FAIL => the edge was basis noise.
+ESCALATE — halt and ask, do not decide alone
+  - any irreversible or outward-facing action (publish, push, post, send, deploy)
+  - any file entering the repo that this loop did not write and has not read
+  - any spend above <$X>
+  - any result that would justify committing capital
+  - anything the loop cannot verify this iteration
+  Escalation is the loop working, not the loop failing.
 
-STEP 4 — MAKER PROBE (Gap 6, the branch with the favourable fee sign)
-  If it does not exist yet, build maker_probe.py: read-only, per window, simulate
-  resting a bid one tick inside the touch on both tokens. Log quote price, whether
-  the market later traded through it (would-fill), and the resolved outcome.
-  Makers pay zero fee and earn rebateRate 0.2. The question is whether
-  rebate + captured spread beats adverse selection. Start it in the background.
-  If it already exists and has 200+ rows, run the G4 analysis:
-    fill rate, average outcome conditional on fill, PnL net of zero fee plus rebate.
-
-STEP 5 — REPORT
-  Append a dated entry to FINDINGS.md with: row counts, any gate run and its verdict,
-  and what the next iteration should do. Keep it to a short table plus 3 lines max.
-  Update the status column in ROADMAP_V2.md section 6 if anything changed.
+CADENCE
+  Match the tick to the rate the data actually changes, not to how often you want to
+  look. If a threshold is H hours away, a 30-minute tick buys nothing and costs 2H
+  analysis passes. Collectors run unattended; the loop wakes to decide, not to watch.
 
 RULES
-  - Never place an order. Never add ClobClient, a private key, or post_order to any
-    file. Verify with a grep for call-syntax before reporting any file as safe.
-  - Verify claims against live APIs before writing them down. Do not assert from
-    memory. If something cannot be verified this iteration, say so.
-  - Gamma hides settled markets unless closed=true.
-  - prices-history "p" is the MIDPOINT, not a tradeable price.
-  - Report a failed gate as a real result, not a setback. A closed path is the most
-    valuable output this project can produce.
-  - If every gate has failed and the maker probe is negative, say the project is
-    finished and recommend stopping. Do not invent a new strategy to keep it alive.
+  - <hard guardrail, e.g. never place an order>. Verify by grepping for call-syntax
+    before reporting any file as safe — a prohibition with no check is a wish.
+  - Verify claims against live sources before writing them down. If something cannot
+    be verified this iteration, say so.
+  - Report a failed gate as a real result. A closed path is a valid output.
+  - If every gate has failed, say the project is finished and recommend stopping. Do
+    not invent a new hypothesis to keep it alive.
 ```
 
 ---
 
-## Thresholds
+## Inference discipline
 
-| Gate | Needs | Currently |
-|---|---|---|
-| G1 fill | 200 resolved ladder rows | ~1 per 5 min → **~17 h** |
-| G2 calibration | G1 pass + same rows | after G1 |
-| G3 feed | G2 pass | after G2 |
-| G4 maker | 200 maker_probe rows | ~17 h after build |
+The parts most loop guidance omits. Both earned their place in the polymarket run.
 
-At 288 windows/day, G1 is reachable in under a day. Do not run a gate early — an
-underpowered z-score is how this project talks itself into funding a loss.
+**Pre-register the gate before the data exists.** Write the analysis — thresholds,
+buckets, exclusions, pass criteria — while the sample is still short of the threshold,
+and run it unmodified. `gate_g2.py` was written at 194/200 rows for exactly this reason.
+A holdout split protects against overfitting the model; pre-registration protects against
+tuning the *analysis*, which is the easier and more common failure.
+
+**Correct for every bucket you looked at.** Report the number tested alongside the
+result. Four buckets at α=0.05 needs |z| > 2.50, not 2.00. A bucket found by merging
+others after seeing the data is a *new* test, so the correction gets harsher, not
+gentler — the polymarket 81/81 band hit z=+1.89 post-hoc and was rejected on this rule.
+
+**Check your own streaks for artifacts.** A 93-of-93 result across consecutive time
+windows may be one correlated event, not 93 draws. Run the cheap check — a runs test
+took two minutes and returned z=+0.61, which is what let the streak stand.
+
+**Watch for promotion on noise.** Compute the standard error of your acceptance metric
+before setting the bar. Repeated "promote if better" against a small fixed holdout will
+promote noise: 15 cases on a 0–5 rubric has SE ≈ 0.27, so a 0.2 improvement is half a
+standard error, and twelve rounds of it will find something every time.
 
 ---
 
-## Stopping
+## What the missing parts cost
 
-Call it finished when either:
-- **G1 fails** and the maker probe is negative → no viable strategy, stop.
-- **G4 passes** → a real edge exists; move to L6 in [LOOPS.md](LOOPS.md), which is the
-  first point at which writing execution code is justified.
+Concrete, from the run that closed on 2026-07-27:
 
-End the loop with `ScheduleWakeup(stop: true)` or by saying "stop the loop".
+| Missing part | What happened |
+|---|---|
+| Stall rule | 11 consecutive no-change iterations; noticed at iteration 13, no mechanism to act |
+| Budget cap | 36 iterations over 17 h, spend never measured |
+| Cadence | 30-min foreground tick against a 17-h collection — "your time plus the machine's" |
+| Escalation | `git add -A` published five unread files to a public repo |

@@ -1010,3 +1010,64 @@ that nobody has to re-run them.
 **Note on cadence:** `ladder.py` sweeps settlements only after the next window's
 blocking sample loop, so a row lands ~10 min after its window closes, not ~6.
 Not a bug — factor it into growth expectations.
+
+---
+
+## 2026-07-27 — E0 + E1 executed. Last open branch closed.
+
+V3 defined gates E0–E5 and left **E0 and E1 unrun**. They were the two cheapest, and E1 was
+the one that decided the maker branch. Both now executed.
+
+### E1 — reward pool: $0
+
+V3 §5 named liquidity-reward income as the only term that could offset the measured
+adverse-selection bleed (−$0.077…−0.097/share). V3 §4 pre-set the kill threshold: pool = $0
+⇒ maker branch dead, permanently.
+
+Read live from `clob.polymarket.com/markets/{conditionId}`, 12 consecutive open markets:
+
+```
+btc-updown-5m-1785168000  rates=NULL  min_size=50  max_spread=4.5
+...
+RESULT: 12/12 open BTC 5m markets have rewards.rates = NULL
+```
+
+Gamma corroborates: `clobRewards` empty, `holdingRewardsEnabled: false`.
+
+**The trap worth recording:** `min_size: 50` and `max_spread: 4.5` are populated, so the
+market looks reward-configured. `rates` is null — nothing is emitted. Any future check must
+read `rates`, not the presence of a rewards object.
+
+**Maker branch dead on the project's own pre-registered threshold.** E4/E5 are not skipped
+out of fatigue — V3 §4 forbids running them against a $0 pool, since no fill-timing or
+filtering result can rescue arithmetic.
+
+### E0 — citations: both load-bearing claims hold
+
+| Claim | Result |
+|---|---|
+| A. Oracle is Chainlink **Data Streams**, not a heartbeat aggregator | ✅ Confirmed. Docs: pull-based, "retrieve a report and verify it onchain whenever you need it", sub-second, no stale-round concept. Data *Feeds* are the push/heartbeat product. The market's own `resolutionSource` is `data.chain.link/**streams**/btc-usd` |
+| B. Reward pool ≈ $0 | ✅ Confirmed by E1's direct read, which outranks the citation |
+
+**Q1 (stale-oracle / last-look) stays closed.** It required a heartbeat feed with a lagging
+last update. Data Streams has no such window.
+
+### Disposition of the rest
+
+- **E2** (Chainlink open-price capture) — moot; it only mattered if E0 failed.
+- **E3** (book-VWAP recalibration) — already run as G2: 189 windows, real `/book` VWAP,
+  aggregate 81.48% vs 81.69% implied, **z = −0.07**. Best band +1.44, post-hoc merge +1.89,
+  Šidák bar 2.73. No bucket clears.
+
+### Stopping rule satisfied
+
+V3 §7 required *E1 returns $0* **and** *E3 finds no bucket at |z| > 2.73*. Both met.
+**The project is finished.**
+
+Every branch closed by measurement: taker on calibration (z = −0.07), maker on adverse
+selection (93/94) then permanently on a $0 pool, oracle on Data Streams' pull-based design.
+
+What replaces it is a weekly one-minute watch over three falsifiable triggers — W1
+`rewards.rates` non-null, W2 fee rate below 0.07, W3 tick below 0.01. See
+ROADMAP_FINAL.md, LOOPS_FINAL.md, LOOP_PROMPT_FINAL.md. The project reopens on a number,
+never on an idea.
